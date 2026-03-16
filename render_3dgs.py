@@ -5,9 +5,11 @@
 依赖: torch, gsplat, numpy, plyfile, Pillow
 安装: pip install gsplat plyfile Pillow numpy torch
 
+python render_3dgs.py  --ply asset/point_cloud.ply --eye 0.5 0 0.3 --target 0 0 0 --up 0 1.0 0 --out test.png
+
 用法示例：
   # look-at 视角
-  python render_3dgs.py --ply asset/point_cloud.ply    --eye 0 4 5 --target 0 1.0 1.0 --up 0 1.0 0.0     --output renders/frame.png
+  python render_3dgs.py --ply asset/point_cloud.ply    --eye -2.12 -2.12 1.5 --target -1.1257908  -2.3732553  -0.53063446 --up 0 1.0 0     --output renders/frame.png
 
   # c2w 矩阵（行优先16个值）
   python render_3dgs.py --ply asset/point_cloud.ply \\
@@ -76,16 +78,24 @@ def load_ply(ply_path: str, device: str = "cuda") -> Gaussians:
     def col(name):
         return torch.tensor(np.array(vtx[name], dtype=np.float32), device=device)
 
-    means     = torch.stack([col("x"), col("y"), col("z")], dim=-1)
-    quats     = F.normalize(
-        torch.stack([col("rot_0"), col("rot_1"), col("rot_2"), col("rot_3")], dim=-1),
-        dim=-1,
-    )
-    scales    = torch.stack([col("scale_0"), col("scale_1"), col("scale_2")], dim=-1)
-    opacities = col("opacity")
+    means = torch.stack([col("x"), col("y"), col("z")], dim=-1)
 
-    SH_C0  = 0.28209479177387814
-    f_dc   = torch.stack([col("f_dc_0"), col("f_dc_1"), col("f_dc_2")], dim=-1)
+    quats = F.normalize(
+        torch.stack([col("rot_0"), col("rot_1"), col("rot_2"), col("rot_3")], dim=-1),
+        dim=-1
+    )
+
+    # 必须 exp
+    scales = torch.exp(
+        torch.stack([col("scale_0"), col("scale_1"), col("scale_2")], dim=-1)
+    )
+
+    # 必须 sigmoid
+    opacities = torch.sigmoid(col("opacity"))
+
+    SH_C0 = 0.28209479177387814
+    f_dc = torch.stack([col("f_dc_0"), col("f_dc_1"), col("f_dc_2")], dim=-1)
+
     colors = (0.5 + SH_C0 * f_dc).clamp(0.0, 1.0)
 
     print(f"[load_ply] 加载了 {means.shape[0]:,} 个高斯，来自 {ply_path}")
