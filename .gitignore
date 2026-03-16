@@ -1,0 +1,9 @@
+/asset/
+/renders/
+
+
+__pycache__/
+*.py[cod]
+.env
+venv/
+.vscode/
