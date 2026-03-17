@@ -1,0 +1,11 @@
+[
+  {
+    "scene": "dataset/scene/point_cloud.ply",
+    "questions": [
+      {
+        "question": "自行车是什么颜色的？提示：目标物体位置大致在(-0.22, 1, 1)",
+        "answer": "黑色"
+      }
+    ]
+  }
+]

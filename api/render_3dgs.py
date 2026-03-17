@@ -5,20 +5,17 @@
 依赖: torch, gsplat, numpy, plyfile, Pillow
 安装: pip install gsplat plyfile Pillow numpy torch
 
-python render_3dgs.py  --ply asset/point_cloud.ply --eye 0.5 0 0.3 --target 0 0 0 --up 0 1.0 0 --out test.png
+python api/render_3dgs.py --ply dataset/scene/point_cloud.ply --eye 0.5 0 0.3 --target 0 0 0 --up 0 1.0 0 --out test.png
 
 用法示例：
   # look-at 视角
-  python render_3dgs.py --ply asset/point_cloud.ply    --eye -2.12 -2.12 1.5 --target -1.1257908  -2.3732553  -0.53063446 --up 0 1.0 0     --output renders/frame.png
+python api/render_3dgs.py --ply dataset/scene/point_cloud.ply    --eye 0.5  1.13  0.22 --target -0.22 1 1 --up 0 1.0 0     --output frame.png
 
   # c2w 矩阵（行优先16个值）
-  python render_3dgs.py --ply asset/point_cloud.ply \\
-      --c2w 1 0 0 0  0 1 0 1.5  0 0 1 3.0  0 0 0 1 \\
-      --output output/frame.png
+python api/render_3dgs.py --ply dataset/scene/point_cloud.ply  --c2w 1 0 0 0  0 1 0 1.5  0 0 1 3.0  0 0 0 1  --output frame.png
 
   # 批量 JSON
-  python render_3dgs.py --ply asset/point_cloud.ply \\
-      --cameras_json cameras.json --output output/
+python api/render_3dgs.py --ply dataset/scene/point_cloud.ply    --cameras_json cameras.json --output output/
 """
 
 import argparse

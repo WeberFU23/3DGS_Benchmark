@@ -1,6 +1,6 @@
-/asset/
-/renders/
-
+/dataset/
+/tmp_renders/
+apikey.txt
 
 __pycache__/
 *.py[cod]

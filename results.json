@@ -1,0 +1,8 @@
+[
+  {
+    "scene": "dataset/scene/point_cloud.ply",
+    "question": "\u81ea\u884c\u8f66\u662f\u4ec0\u4e48\u989c\u8272\u7684\uff1f\u63d0\u793a\uff1a\u76ee\u6807\u7269\u4f53\u4f4d\u7f6e\u5927\u81f4\u5728(-0.22, 1, 1)",
+    "pred": "FAILED",
+    "gt": "\u9ed1\u8272"
+  }
+]
