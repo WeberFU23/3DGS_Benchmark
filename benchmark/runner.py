@@ -34,14 +34,19 @@ class BenchmarkRunner:
 
                 img = self.renderer.render(cam,target)
 
+                print("第 {} 次渲染已返回".format(step+1))
+
                 msg = "Observation"
 
                 continue
 
 
-            ans = parse_answer(reply)
+            else:
 
-            if ans:
+                ans = parse_answer(reply)
+
+                if not ans:
+                    ans = "没有API调用也没有回答"
 
                 return ans
 

@@ -54,7 +54,7 @@ class GPTAgent(BaseLLMAgent):
 
 
 class QwenAgent(BaseLLMAgent):
-    def __init__(self, api_key, system_prompt, model="qwen-vl-plus"):
+    def __init__(self, api_key, system_prompt, model="qwen2.5-vl-72b-instruct"):
         base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
         super().__init__(api_key, base_url, model, system_prompt)
 

@@ -9,7 +9,7 @@ python api/render_3dgs.py --ply dataset/scene/point_cloud.ply --eye 0.5 0 0.3 --
 
 用法示例：
   # look-at 视角
-python api/render_3dgs.py --ply dataset/scene/point_cloud.ply    --eye 0.5  1.13  0.22 --target -0.22 1 1 --up 0 1.0 0     --output frame.png
+python api/render_3dgs.py --ply dataset/scene/point_cloud.ply   --eye 0.31 0.5 -0.2 --target  0.3 0.35 -0.2 --up 0 1.0 0     --output frame.png
 
   # c2w 矩阵（行优先16个值）
 python api/render_3dgs.py --ply dataset/scene/point_cloud.ply  --c2w 1 0 0 0  0 1 0 1.5  0 0 1 3.0  0 0 0 1  --output frame.png
