@@ -7,9 +7,11 @@
 
 python api/render_3dgs.py --ply dataset/scene/point_cloud.ply --eye 0.5 0 0.3 --target 0 0 0 --up 0 1.0 0 --out test.png
 
+Y越小越往上 似乎forward反了
+
 用法示例：
   # look-at 视角
-python api/render_3dgs.py --ply dataset/scene/point_cloud.ply   --eye 0.31 0.5 -0.2 --target  0.3 0.35 -0.2 --up 0 1.0 0     --output frame.png
+python api/render_3dgs.py --ply dataset/scene/toys.ply   --eye 0.1 -1 0.1 --target  0 0.5  --up 0 1.0 0     --output frame.png
 
   # c2w 矩阵（行优先16个值）
 python api/render_3dgs.py --ply dataset/scene/point_cloud.ply  --c2w 1 0 0 0  0 1 0 1.5  0 0 1 3.0  0 0 0 1  --output frame.png
@@ -144,19 +146,19 @@ def pose_from_lookat(
         raise ValueError("eye 和 target 不能是同一个点")
     forward /= norm
 
-    right = np.cross(forward, up)
+    right = np.cross(up, forward)
     right_norm = np.linalg.norm(right)
     if right_norm < 1e-8:
         raise ValueError("forward 与 up 平行，请调整 --up 方向")
     right /= right_norm
 
-    up_real = np.cross(right, forward)
+    up_real = np.cross(forward, right)
 
     # c2w：列 = right, up_real, -forward, eye
     c2w      = np.eye(4, dtype=np.float64)
     c2w[:3, 0] = right
     c2w[:3, 1] = up_real
-    c2w[:3, 2] = -forward
+    c2w[:3, 2] = forward
     c2w[:3, 3] = eye
 
     view_mat = np.linalg.inv(c2w)

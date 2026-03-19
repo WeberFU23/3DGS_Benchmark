@@ -1,10 +1,10 @@
 [
-  {
-    "scene": "dataset/scene/point_cloud.ply",
+    {
+    "scene": "dataset/scene/toys.ply",
     "questions": [
       {
-        "question": "椅子旁边是什么？提示：目标物体位置大致在target=(0.3, 0.35, -0.2)",
-        "answer": "自行车"
+        "question": "桌子上有几个玩具？提示：目标物体位置大致在target=(0, 0.5, 0)",
+        "answer": "2个"
       }
     ]
   }
