@@ -7,23 +7,5 @@
         "answer": "19个"
       }
     ]
-  },
-  {
-    "scene": "dataset/scene/toys.ply",
-    "questions": [
-      {
-        "question": "桌子上有几个玩具椅子？提示：目标物体位置大致在target=(0, 0.5, 0)",
-        "answer": "2个"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/toys.ply",
-    "questions": [
-      {
-        "question": "桌子上的魔方是复原的吗？提示：目标物体位置大致在target=(0, 0.5, 0)",
-        "answer": "是"
-      }
-    ]
-    }
+  }
 ]
