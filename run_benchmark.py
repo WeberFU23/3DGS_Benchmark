@@ -32,7 +32,7 @@ def main():
 
             question = q["question"]
 
-            print("\n\nQuestion:", question)
+            print("\n\nQuestion\n\n:", question)
 
             agent = QwenAgent(api_key["Qwen"],prompt)
             runner = BenchmarkRunner(renderer, agent)
