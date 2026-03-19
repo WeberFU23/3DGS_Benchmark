@@ -34,7 +34,7 @@ class BenchmarkRunner:
 
                 img = self.renderer.render(cam,target)
 
-                print("第 {} 次渲染已返回".format(step+1))
+                print("\n\n第 {} 次渲染已返回".format(step+1))
 
                 msg = "Observation"
 

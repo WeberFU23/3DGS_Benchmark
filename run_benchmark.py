@@ -23,7 +23,7 @@ def main():
 
         ply = scene_data["scene"]
 
-        print("\n====== Loading Scene ======")
+        print("\n\n====== Loading Scene ======")
         print(ply)
 
         renderer = Renderer3DGS(ply)
@@ -32,14 +32,14 @@ def main():
 
             question = q["question"]
 
-            print("\nQuestion:", question)
+            print("\n\nQuestion:", question)
 
             agent = QwenAgent(api_key["Qwen"],prompt)
             runner = BenchmarkRunner(renderer, agent)
 
             ans = runner.run(question)
 
-            print("Answer:", ans)
+            print("\n\nAnswer:", ans)
 
             results.append({
                 "scene": ply,

@@ -3,8 +3,8 @@
     "scene": "dataset/scene/toys.ply",
     "questions": [
       {
-        "question": "桌子上有几个玩具？提示：目标物体位置大致在target=(0, 0.5, 0)",
-        "answer": "19个"
+        "question": "桌子上有多少物品？塑料盒和里面的红绳不计。提示：目标物体位置大致在target=(0, 0.5, 0)",
+        "answer": "21个"
       }
     ]
   },
