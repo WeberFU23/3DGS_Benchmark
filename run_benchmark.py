@@ -32,7 +32,7 @@ def main():
 
             question = q["question"]
 
-            print("\n\nQuestion\n\n:", question)
+            print("\n\nQuestion:", question, "\n\n")
 
             agent = QwenAgent(api_key["Qwen"],prompt)
             runner = BenchmarkRunner(renderer, agent)
@@ -49,7 +49,7 @@ def main():
             })
 
     with open("results.json","w") as f:
-        json.dump(results,f,indent=2)
+        json.dump(results, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

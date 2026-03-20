@@ -5,27 +5,19 @@
       {
         "question": "桌子上有多少物品？塑料盒和里面的红绳不计。提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "21个"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/toys.ply",
-    "questions": [
+      },
       {
         "question": "桌子上有几个玩具椅子？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "2个"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/toys.ply",
-    "questions": [
+      },
       {
         "question": "桌子上的魔方是复原的吗？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "是"
       }
     ]
   },
+
+
   {
     "scene": "dataset/scene/bike.ply",
     "questions": [
@@ -35,45 +27,34 @@
       }
     ]
   },
+
+
   {
     "scene": "dataset/scene/afternoon_tea.ply",
     "questions": [
       {
         "question": "场景中是谁在吃下午茶？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "玩偶羊与玩偶熊"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/ramen.ply",
-    "questions": [
+      },
       {
         "question": "他们在是什么饼干？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "chocolate chip cookies"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/afternoon_tea.ply",
-    "questions": [
+      },
       {
         "question": "谁的杯子里加奶了？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "玩具熊"
       }
     ]
   },
+
+
   {
     "scene": "dataset/scene/ramen.ply",
     "questions": [
       {
         "question": "吃拉面要用到汤勺在哪里？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "拉面碗下面，托盘里"
-      }
-    ]
-  },
-  {
-    "scene": "dataset/scene/ramen.ply",
-    "questions": [
+      },
       {
         "question": "描述拉面里的食材？提示：目标物体位置大致在target=(0, 0.5, 0)",
         "answer": "..."
